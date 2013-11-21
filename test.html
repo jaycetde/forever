@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="build/build.css" />
+        
+        <style>
+            #container {
+                overflow: auto;
+                width: 400px;
+                height: 600px;
+                background: #CCC;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            
+            <div id="content"></div>
+            
+        </div>
+        
+        <script src="build/build.js"></script>
+        <script>
+            
+            var content = document.getElementById('content')
+              , counter = 0
+            ;
+            
+            for (var i = 0; i < 100; i += 1) {
+                container.innerHTML += '<br /> A line of content ' + counter++;
+            }
+            
+            var Forever = require('forever')
+              , foreverScroll = Forever(document.getElementById('container'))
+            ;
+            
+            foreverScroll.on('more', function () {
+                setTimeout(function () {
+                    for (var i = 0; i < 50; i += 1) {
+                        container.innerHTML += '<br /> A line of content ' + counter++;
+                    }
+                    foreverScroll.ready();
+                }, 500);
+            });
+            
+        </script>
+    </body>
+
+</html>

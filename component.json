@@ -1,0 +1,9 @@
+{
+    "name": "forever",
+    "scripts": ["index.js"],
+    "styles": [],
+    "dependencies": {
+        "component/emitter": "*",
+        "component/event": "*"
+    }
+}
