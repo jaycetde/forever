@@ -24,6 +24,7 @@ Forever.prototype = new Emitter();
 Forever.prototype.ready = function (bool) {
     if (typeof bool === 'undefined') bool = true;
     this._ready = bool;
+    this.scroll();
 };
 
 Forever.prototype.scroll = function (e) {
